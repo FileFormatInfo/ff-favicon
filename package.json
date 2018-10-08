@@ -1,0 +1,31 @@
+{
+  "name": "favicon",
+  "version": "0.0.1",
+  "description": "Make a favicon from a JPEG or SVG",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.5",
+    "request": "^2.82.0",
+    "body-parser": "^1.18.2",
+    "gm": "^1.23.0",
+    "async": "^2.5.0",
+    "multer": "^1.3.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "engines": {
+    "node": "8.1.4"
+  },
+  "repository": {
+    "url": "https://www.github.com/fileformat/ff-favicon"
+  },
+  "keywords": [
+    "favicon",
+    "svg",
+    "jpeg",
+    "jpg",
+    "fileformat.info"
+  ]
+}
