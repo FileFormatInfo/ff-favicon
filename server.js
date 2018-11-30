@@ -2,24 +2,24 @@
 // where your node app starts
 
 // init project
-var crypto = require('crypto');
-var express = require('express');
-var fs = require('fs');
-var os = require('os');
-var rp = require('request-promise-native');
-var request = require('request');
-var bodyParser = require('body-parser');
-var gm = require('gm').subClass({imageMagick: true});
-var async = require('async');
-var multer  = require('multer');
+const crypto = require('crypto');
+const express = require('express');
+const fs = require('fs');
+const os = require('os');
+const rp = require('request-promise-native');
+const request = require('request');
+const bodyParser = require('body-parser');
+const gm = require('gm').subClass({imageMagick: true});
+const async = require('async');
+const multer  = require('multer');
 
-var app = express();
+const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
-//app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 function getStatus() {
-	var retVal = {}
+	const retVal = {}
 
 	retVal["success"] = true;
 	retVal["message"] = "OK";
@@ -45,7 +45,7 @@ function getStatus() {
 	retVal["process.platform"] = process.platform;
 	retVal["process.release"] = process.release;
   retVal["process.title"] = process.title;
-	retVal["process.uptime"] = process.uptime;
+	retVal["process.uptime"] = process.uptime();
 	retVal["process.version"] = process.version;
 	retVal["process.versions"] = process.versions;
 	retVal["process.installPrefix"] = process.installPrefix;
@@ -163,26 +163,9 @@ app.post('/file', multer({ storage: multer.memoryStorage() }).single('file'), fu
 
 });
 
-app.get('/robots.txt', function(req, res) {
-  
-  res.setHeader("content-type", "text/plain; charset=utf-8");
-  res.write("User-Agent: *\n");
-  res.write("Disallow: /\n");
-  res.end();
-  
-});
-
-app.get('/favicon.ico', function(req, res) {
-  request.get(process.env.FAVICON_ICO).pipe(res);
-});
-
-app.get('/favicon.svg', function(req, res) {
-  request.get(process.env.FAVICON_SVG).pipe(res);
-});
-
 app.get('/', function(req, res) {
   if (process.env.ALLOW_LOCAL_FORM == "true") {
-    fs.createReadStream("public/index.html").pipe(res);
+    fs.createReadStream("views/index.html").pipe(res);
   } else {
     res.redirect(process.env.REMOTE_FORM);
   }
@@ -237,7 +220,7 @@ app.post('/', multer({ storage: multer.memoryStorage() }).single('file'), asyncM
     
     var tasks = sizes.map(function(size) {
       return new Promise(function(resolve, reject) {
-        var tmpfn = "temp-" + uuid + "-" + size + ".png";
+        var tmpfn = "/tmp/temp-" + uuid + "-" + size + ".png";
         gm(buf)
           .resize(size, size)
           .background("none")

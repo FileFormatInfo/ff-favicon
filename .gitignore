@@ -1,0 +1,7 @@
+*~
+crash.log
+.env
+.idea/
+node_modules/
+tmp/
+_tmp/

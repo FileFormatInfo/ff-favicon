@@ -1,0 +1,7 @@
+#
+# robots.txt for ff-favicon
+#
+# nothing to index here: the user-facing page is at www.fileformat.info
+#
+User-Agent: *
+Disallow: /
