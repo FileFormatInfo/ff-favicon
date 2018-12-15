@@ -1,0 +1,11 @@
+{
+  "basic_scaling": {
+    "idle_timeout": "10m",
+    "max_instances": 1
+  },
+  "env_variables": {
+    "ALLOW_LOCAL_FORM": "true",
+    "GOOGLE_ANALYTICS": "UA-328425-1"
+  },
+  "runtime": "nodejs8"
+}
