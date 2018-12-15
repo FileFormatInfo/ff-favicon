@@ -19,11 +19,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 function getStatus() {
-	const retVal = {}
+	const retVal = {};
 
 	retVal["success"] = true;
 	retVal["message"] = "OK";
 	retVal["timestamp"] = new Date().toISOString();
+    retVal["lastmod"] = process.env.LASTMOD || null;
+    retVal["commit"] = process.env.COMMIT || null;
+    retVal["tech"] = "NodeJS " + process.version;
 	retVal["__dirname"] = __dirname;
 	retVal["__filename"] = __filename;
 	retVal["os.hostname"] = os.hostname();
