@@ -2,4 +2,4 @@
 
 
 export $(cat .env)
-npm start
+nodemon start

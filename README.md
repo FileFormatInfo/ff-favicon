@@ -5,6 +5,9 @@ Online conversion of SVG or JPEG (or anything else supported by [ImageMagick](ht
 
 You can see the source code for this site on [Github](https://www.github.com/fileformat/ff-favicon).
 
+```bash
+apt-get install librsvg2-dev
+```
 
 How to use it
 -------------
