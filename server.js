@@ -72,6 +72,7 @@ app.get('/status.json', function(req, res) {
     {
         res.write(JSON.stringify(retVal));
     }
+    res.end();
 });
 
 const asyncMiddleware = fn =>
