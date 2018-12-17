@@ -116,20 +116,6 @@ function rsvg_convert(res, buf, size) {
 
     fs.writeFileSync(tmpfn, png);
     return Promise.resolve(tmpfn);
-/*
-    return new Promise(function(resolve, reject) {
-        svg.on('finish', function () {
-            console.log('SVG width: ' + svg.width);
-            console.log('SVG height: ' + svg.height);
-            fs.writeFile(tmpfn, svg.render({
-                format: 'png',
-                width: size,
-                height: size
-            }).data);
-            resolve(tmpfn);
-        })
-    });
-*/
 }
 
 function gm_convert(res, buf, size) {
@@ -190,12 +176,16 @@ app.post('/', multer({ storage: multer.memoryStorage() }).single('file'), asyncM
     res.write(';base64,');
     res.write(base64);
     res.write('" />\n');
+    var converter = gm_convert;
+    if (mimetype && (mimetype.startsWith("image/svg") || mimetype.startsWith("text/"))) {
+        converter = rsvg_convert;
+    }
     res.write("Working          : Generating intermediate images...\n");
 
     const tasks = [];
 
     for (const size of sizes) {
-       tasks.push( rsvg_convert(res, buf, size) );
+       tasks.push( converter(res, buf, size) );
     }
 
     const filenames = await Promise.all(tasks);
