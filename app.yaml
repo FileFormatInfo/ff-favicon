@@ -1,7 +1,7 @@
 {
-  "basic_scaling": {
-    "idle_timeout": "10m",
-    "max_instances": 1
+  "automatic_scaling": {
+    "max_instances": 1,
+    "min_instances": 1
   },
   "env_variables": {
     "ALLOW_LOCAL_FORM": "true",
