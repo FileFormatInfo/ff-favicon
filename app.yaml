@@ -7,5 +7,5 @@
     "ALLOW_LOCAL_FORM": "true",
     "GOOGLE_ANALYTICS": "UA-328425-1"
   },
-  "runtime": "nodejs8"
+  "runtime": "nodejs10"
 }

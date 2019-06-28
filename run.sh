@@ -2,4 +2,4 @@
 
 
 export $(cat .env)
-nodemon start
+npx nodemon start
