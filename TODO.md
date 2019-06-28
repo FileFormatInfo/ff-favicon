@@ -7,4 +7,4 @@ To Do
  - [ ] custom 500: issues after header sent
  - [ ] switch to Koa/TypeScript
  - [ ] logging
- - [ ] save uploads?
+ - [ ] save uploads on error?
