@@ -1,4 +1,4 @@
-# FavIcon Generator [<img alt="ff-favicon Logo" src="https://favicon.fileformat.info/favicon.svg" height="90" align="right">](https://www.fileformat.info/)
+# FavIcon Generator [<img alt="ff-favicon Logo" src="https://favicon.fileformat.info/favicon.svg" height="90" align="right">](https://favicon.fileformat.info/)
 
 A website to make favicons from SVGs or PNGs/JPEGs.
 
