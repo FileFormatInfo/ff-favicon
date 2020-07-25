@@ -11,7 +11,7 @@ const request = require('request');
 const bodyParser = require('body-parser');
 const gm = require('gm').subClass({imageMagick: true});
 const async = require('async');
-const Rsvg = new require('librsvg').Rsvg;
+const Rsvg = new require('librsvg-prebuilt').Rsvg;
 const multer  = require('multer');
 
 const app = express();
