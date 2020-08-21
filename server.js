@@ -89,10 +89,10 @@ function uuidv4() {
 const sizes = [ 16, 32, 64, 128 ];
 
 app.get('/', function(req, res) {
-    if (process.env.ALLOW_LOCAL_FORM == "true") {
-        fs.createReadStream("views/index.html").pipe(res);
+    if (process.env.FORM_URL) {
+        res.redirect(process.env.FORM_URL);
     } else {
-        res.redirect(process.env.REMOTE_FORM);
+        fs.createReadStream("views/index.html").pipe(res);
     }
 });
 

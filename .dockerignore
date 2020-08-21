@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+.editorconfig
+.env
+.git
+.github
+.gitignore
+LICENSE.txt
+*.md
+node_modules/
+*.sh
