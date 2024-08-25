@@ -2,6 +2,9 @@
 
 A website to make favicons from SVGs or PNGs/JPEGs.
 
+> [!NOTE]  
+> This version is now archived: due to lack of updates to the `librsvg` npm module, I have switched to a rust-based version: see [FileFormatInfo/favicon-rs](https://github.com/FileFormatInfo/favicon-rs)
+
 ## Using
 
 Go to [favicon.fileformat.info](https://favicon.fileformat.info/) and upload an `.svg` or `.png` file!
